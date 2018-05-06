@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Image } from "react";
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+//import guitarImg from '../images/12p.jpg';
 
 class App extends React.Component {
     constructor(props) {
@@ -31,8 +32,8 @@ class App extends React.Component {
             method: 'DELETE',
             credentials: 'same-origin'})
             .then(res => this.loadGuitarsFromServer()
-    )
-    }
+        )
+    };
 
     createGuitar(guitar) {
         fetch('http://localhost:8080/api/guitars',
@@ -74,7 +75,12 @@ class GuitarTable extends React.Component {
         return (
             <table className="table table-striped">
             <tbody>
-            <tr><th>modelname</th><th>series</th><th>strings</th><th>price</th><th>price</th><th>img</th>
+            <tr>
+            <th>modelname</th>
+            <th>series</th>
+            <th>strings</th>
+            <th>price</th>
+            <th>img</th>
         </tr>
         {guitars}
     </tbody>
@@ -101,8 +107,7 @@ class Guitar extends React.Component {
             <td>{this.props.guitar.series}</td>
             <td>{this.props.guitar.strings }</td>
             <td>{this.props.guitar.price}</td>
-            <th>{this.props.guitar.img}</td>
-
+            <td><img src={require('../img/sl2p.jpg')}/></td>
         <td>
             <button className="btn btn-danger" onClick={this.deleteGuitar}>Delete</button>
         </td>
@@ -114,7 +119,7 @@ class Guitar extends React.Component {
 class GuitarForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {modelename: '', series: '', strings: '', strings: '', img: ''};
+        this.state = {modelename: '', series: '', strings: '', price: '', img: ''};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
@@ -146,13 +151,13 @@ class GuitarForm extends React.Component {
                 <input type="text" placeholder="series" className="form-control" name="series" onChange={this.handleChange}/>
             </div>
             <div className="col-md-2">
-                <input type="text" placeholder="integer" className="form-control" name="strings" onChange={this.handleChange}/>
+                <input type="text" placeholder="strings" className="form-control" name="strings" onChange={this.handleChange}/>
             </div>
         <div className="col-md-2">
-            <input type="integer" placeholder="double" className="form-control" name="price" onChange={this.handleChange}/>
+            <input type="integer" placeholder="price" className="form-control" name="price" onChange={this.handleChange}/>
         </div>
         <div className="col-md-2">
-            <input type="text" placeholder="strings" className="form-control" name="strings" onChange={this.handleChange}/>
+            <input type="text" placeholder="image" className="form-control" name="strings" onChange={this.handleChange}/>
         </div>
             <div className="col-md-2">
                 <button className="btn btn-success" onClick={this.handleSubmit}>Save</button>

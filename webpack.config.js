@@ -23,10 +23,17 @@ module.exports = {
                 use:['style-loader','css-loader']
             },
             {
-                test: /.(jpe?g|png|gif|svg)$/i,
-                use: [
-                    'url-loader?limit=10000',
-                    'img-loader'
+                //test: /.(jpe?g|png|gif|svg)$/i,
+                test: /\.(png|jp(e*)g|svg)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        limit: 8000,
+                        name: './img/[hash]-[name].[ext]'
+                    }
+                }
+                    //'img-loader'
+                    //'url-loader?limit=10000',
                 ]
             }
 

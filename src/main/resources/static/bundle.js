@@ -100,6 +100,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+//import guitarImg from '../images/12p.jpg';
+
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
@@ -225,6 +227,11 @@ var GuitarTable = function (_React$Component2) {
                             'th',
                             null,
                             'price'
+                        ),
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            'img'
                         )
                     ),
                     guitars
@@ -278,6 +285,16 @@ var Guitar = function (_React$Component3) {
                 _react2.default.createElement(
                     'td',
                     null,
+                    this.props.guitar.price
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement('img', { src: __webpack_require__(23) })
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
                     _react2.default.createElement(
                         'button',
                         { className: 'btn btn-danger', onClick: this.deleteGuitar },
@@ -295,13 +312,11 @@ var GuitarForm = function (_React$Component4) {
     _inherits(GuitarForm, _React$Component4);
 
     function GuitarForm(props) {
-        var _this8$state;
-
         _classCallCheck(this, GuitarForm);
 
         var _this8 = _possibleConstructorReturn(this, (GuitarForm.__proto__ || Object.getPrototypeOf(GuitarForm)).call(this, props));
 
-        _this8.state = (_this8$state = { modelename: '', series: '', strings: '' }, _defineProperty(_this8$state, 'strings', ''), _defineProperty(_this8$state, 'img', ''), _this8$state);
+        _this8.state = { modelename: '', series: '', strings: '', price: '', img: '' };
         _this8.handleSubmit = _this8.handleSubmit.bind(_this8);
         _this8.handleChange = _this8.handleChange.bind(_this8);
         return _this8;
@@ -330,7 +345,7 @@ var GuitarForm = function (_React$Component4) {
                 _react2.default.createElement(
                     'div',
                     { className: 'panel-heading' },
-                    'Create student'
+                    'Create guitar'
                 ),
                 _react2.default.createElement(
                     'div',
@@ -352,6 +367,16 @@ var GuitarForm = function (_React$Component4) {
                             'div',
                             { className: 'col-md-2' },
                             _react2.default.createElement('input', { type: 'text', placeholder: 'strings', className: 'form-control', name: 'strings', onChange: this.handleChange })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2' },
+                            _react2.default.createElement('input', { type: 'integer', placeholder: 'price', className: 'form-control', name: 'price', onChange: this.handleChange })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2' },
+                            _react2.default.createElement('input', { type: 'text', placeholder: 'image', className: 'form-control', name: 'strings', onChange: this.handleChange })
                         ),
                         _react2.default.createElement(
                             'div',
@@ -29658,6 +29683,12 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./img/d6768d0c291c067361cbf9881b796b3f-sl2p.jpg";
 
 /***/ })
 /******/ ]);
