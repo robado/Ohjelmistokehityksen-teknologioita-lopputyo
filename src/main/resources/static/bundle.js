@@ -104,8 +104,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//import guitarImg from '../images/12p.jpg';
-
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
@@ -183,7 +181,6 @@ var App = function (_React$Component) {
 
             fetch(guitar.link, {
                 method: 'PUT',
-                credentials: 'same-origins',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -229,7 +226,8 @@ var GuitarTable = function (_React$Component2) {
             var _this7 = this;
 
             var guitars = this.props.guitars.map(function (guitar) {
-                return _react2.default.createElement(Guitar, { key: guitar._links.self.href, guitar: guitar, updateGuitar: _this7.props.updateGuitar, deleteGuitar: _this7.props.deleteGuitar });
+                return _react2.default.createElement(Guitar, { key: guitar._links.self.href, guitar: guitar, updateGuitar: _this7.props.updateGuitar,
+                    deleteGuitar: _this7.props.deleteGuitar });
             });
 
             return _react2.default.createElement(
@@ -318,7 +316,7 @@ var Guitar = function (_React$Component3) {
                 _react2.default.createElement(
                     'td',
                     null,
-                    _react2.default.createElement(GuitarUpdateForm, { guitar: this.props.guitar, updateGuitar: this.updateGuitar })
+                    _react2.default.createElement(GuitarUpdateForm, { updateGuitar: this.props.updateGuitar, guitar: this.props.guitar })
                 ),
                 _react2.default.createElement(
                     'td',

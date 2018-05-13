@@ -60,7 +60,6 @@ class App extends React.Component {
         fetch(guitar.link,
             {
                 method: 'PUT',
-                credentials: 'same-origins',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -133,7 +132,7 @@ class Guitar extends React.Component {
                 <td>{this.props.guitar.strings}</td>
                 <td>{this.props.guitar.price}</td>
                 <td>
-                    <GuitarUpdateForm guitar={this.props.guitar} updateGuitar={this.updateGuitar}/>
+                    <GuitarUpdateForm updateGuitar={this.props.updateGuitar} guitar={this.props.guitar}/>
                 </td>
                 <td>
                     <button className="btn btn-danger" onClick={this.deleteGuitar}>Delete</button>
