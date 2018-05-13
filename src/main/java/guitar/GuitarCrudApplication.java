@@ -17,11 +17,11 @@ public class GuitarCrudApplication {
     @Bean
     public CommandLineRunner guitar(GuitarRepository repository) {
         return (args) -> {
-            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292, "./img/sl2p.jpg"));
-            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292, "./img/sl2p.jpg"));
-            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292, "./img/sl2p.jpg"));
-            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292, "./img/sl2p.jpg"));
-            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292, "./img/sl2p.jpg"));
+            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292));
+            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292));
+            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292));
+            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292));
+            repository.save(new Guitar("Jackson", "Pro Series", 6, 1.292));
         };
     }
 }

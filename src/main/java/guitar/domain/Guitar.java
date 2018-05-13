@@ -12,17 +12,15 @@ public class Guitar {
     private String series;
     private int strings;
     private Double price;
-    private String img;
 
     public Guitar() {
     }
 
-    public Guitar(String modelname, String series, int strings, Double price, String img) {
+    public Guitar(String modelname, String series, int strings, Double price) {
         this.modelname = modelname;
         this.series = series;
         this.strings = strings;
         this.price = price;
-        this.img = img;
     }
 
     public Long getId() {
@@ -65,12 +63,5 @@ public class Guitar {
         this.price = price;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
 
 }
